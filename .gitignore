@@ -6,6 +6,4 @@ package-lock.json
 Gemfile.lock
 .jekyll-cache
 
-_site
-
 *.gem

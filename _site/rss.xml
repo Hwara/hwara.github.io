@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hwara's Playground</title>
+    <description>Development and daily</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 11 Nov 2022 14:05:02 +0900</pubDate>
+    <lastBuildDate>Fri, 11 Nov 2022 14:05:02 +0900</lastBuildDate>
+    <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>와 새 블로그! 첫 글!</title>
+        <description>&lt;h1 id=&quot;와&quot;&gt;와!&lt;/h1&gt;
+
+&lt;p&gt;첫 글이라니 너무 설렌다리~&lt;/p&gt;
+
+&lt;p&gt;마크다운 문법은 어느정도 익숙해서 쓸 만한데 역시 환경이 너무 어렵다..&lt;/p&gt;
+
+&lt;p&gt;이렇게 환경구성하고 테마 내 맘대로 적용하는데 하루가 걸렸다.
+이제 글 편하게 쓰는 법이라던가 시간 자동으로 넣는 방법이라던가.. 여러가지를 찾고 적용해봐야겠다.&lt;/p&gt;
+
+&lt;p&gt;옛날에 네이버 블로그만 깔짝깔짝하다가 이렇게 글 쓰려니 확실히 재밌다.&lt;/p&gt;
+
+&lt;p&gt;이제 열심히 내 메모장으로 써야겠다 홍홍 조와용~&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Nov 2022 14:04:11 +0900</pubDate>
+        <link>http://localhost:4000/first-posting.html</link>
+        <guid isPermaLink="true">http://localhost:4000/first-posting.html</guid>
+        
+        <category>daily</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
