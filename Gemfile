@@ -7,4 +7,3 @@ gem "webrick"
 gem "premonition"
 gem "h2o-ac-jekyll-extlinks"
 gem "nokogiri"
-gem 'jekyll-admin', group: :jekyll_plugins
