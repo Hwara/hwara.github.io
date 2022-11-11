@@ -117,7 +117,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 
 # Build settings
 pagination:
-  enabled: true
+  enabled: false
   per_page: 5
   permalink: 'page:num/'
   title: ':title | :num of :max'
