@@ -65,8 +65,8 @@ nightMode: false
 
 # Comments 
 comments:
-  disqus: false
-  disqus_url: 'https://h2o-ac.disqus.com/embed.js'
+  disqus: true
+  disqus_url: 'https://hwara1221.disqus.com/embed.js'
   waline: false
   waline_url: 'https://h2o-ac-waline.deta.dev/'
   waline_reaction: false
