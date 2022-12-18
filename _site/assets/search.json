@@ -1,9 +1,21 @@
 [
   
     {
+      "title"    : "AS5311를 이용한 Magnet Absolute position 측정 테스트",
+      "tags"     : "Hardware AS5311 Sensor",
+      "url"      : "/tech/as5311.html"
+    } ,
+  
+    {
+      "title"    : "Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용",
+      "tags"     : "jekyll github pages",
+      "url"      : "/tech/make_jekyll_blog.html"
+    } ,
+  
+    {
       "title"    : "와 새 블로그! 첫 글!",
       "tags"     : "daily",
-      "url"      : "/first-posting.html"
+      "url"      : "/daily/first-posting.html"
     } 
   
 ]

@@ -819,7 +819,7 @@ a.extlinks::after {
 .g-sidebar section .latest-articles li .latest-title {
     margin: 5px 0;
     text-align: justify;
-    white-space: nowrap
+    white-space: normal
 }
 
 .g-sidebar section .latest-articles li .latest-title a:hover {

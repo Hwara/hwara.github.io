@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html lang="ko-kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용 - Hwara's Playground</title>
+    <meta name="author" content="Hwara">
+    <meta name="description" content="Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용">
+    <meta name="keywords"
+        content="jekyll, github pages">
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용 - Hwara's Playground">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/tech/make_jekyll_blog.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="Development and daily">
+    <meta property="og:site_name" content="Hwara's Playground">
+    <meta property="og:gray" content="false">
+    
+    <meta property="og:previous_url" content="/tech/as5311.html">
+    
+    
+    <meta property="og:next_url" content="/daily/first-posting.html">
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2022-11-30 22:34:11 +0900" />
+    
+    
+    
+    <meta name="google-site-verification" content="fjC0CY6vXKILBxtIv-xpCNBbwr1ZebAR0BtiiLU69QU" />
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href=" /manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href=" /assets/css/plugins.min.css" />
+    
+    
+    
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-one-light.min.css" />
+    
+    
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <link rel="stylesheet" href=" /assets/css/app.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+
+
+<body class="line-numbers" ontouchstart="">
+
+
+  <!--[if lt IE 10]>
+  <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+  <![endif]-->
+  
+  <div id="all" class="post">
+  
+    <div class="alert-tip" id="no-previous">
+      
+      Already the latest article!
+      
+    </div>
+    <div class="alert-tip" id="no-next">
+      
+      Already the last article!
+      
+    </div>
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    <div id="mode-toggle">
+        <svg class="icon icon-day" aria-hidden="true">
+            <use xlink:href="#icon-day"></use>
+        </svg>
+        <svg class="icon icon-night" aria-hidden="true">
+            <use xlink:href="#icon-night"></use>
+        </svg>
+    </div>
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle"> post </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/categories/index.html" aria-label="All">
+                                All
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/daily/index.html" aria-label="daily">
+                                daily
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tech/index.html" aria-label="tech">
+                                tech
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+    <header
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+      data-theme="default"
+    >
+      <div class="post-wrapper">
+        <div class="post-tags">
+          
+            
+              <a href="/tags.html#jekyll" class="post-tag">jekyll</a>
+            
+              <a href="/tags.html#github%20pages" class="post-tag">github pages</a>
+            
+          
+        </div>
+        <h1>Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+            Hwara
+          </span>
+          <time class="post-meta-item" datetime="22-11-30">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-calendar"></use>
+            </svg>
+            <span class="create-at"></span>
+          </time>
+          <!--
+          <time class="post-meta-item" datetime="22-11-30">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-update"></use>
+            </svg>
+            <span class="update-at"></span>
+          </time>
+          -->
+          
+          <!--
+            <span class="post-meta-item">
+              <svg class="icon words" aria-hidden="true">
+                <use xlink:href="#icon-words"></use>
+              </svg>
+              There are 4784 words totally 
+            </span>
+          
+            <span class="post-meta-item">
+              <svg class="icon time" aria-hidden="true">
+                <use xlink:href="#icon-time"></use>
+              </svg>
+              It may needs 14 minutes
+            </span>
+            -->
+            
+          
+          
+        </div>
+      </div>
+      
+    </header>
+    <div class="post-content visible">
+      
+
+
+      
+      <div class="container">  
+        <div class="contents">
+          <article class="markdown-body">
+            <p>요즈음 배우고 있는 것들은 노션으로 문서화를 열심히 하고 있기에, 이왕 문서화 해둔 거 기술 블로그를 하나 만들어서 공유하면 좋겠다고 생각했다. Jekyll과 GitHub Pages를 이용한 기술 블로그를 많이 쓰는 것 같아 이번에 한 번 만들어 보았다.</p>
+
+<h2 id="사전-환경-구성">사전 환경 구성</h2>
+
+<p>필자는 기존에 라즈베리파이4 Ubuntu 환경을 구성해놓았기 때문에 <a href="https://jekyllrb-ko.github.io/docs/installation/ubuntu/" rel="nofollow" target="_blank" class="extlinks">공식사이트</a>에서 Ubuntu를 위한 메뉴얼을 보고 Ruby를 설치하였다.</p>
+
+<p>우선 다음 command를 사용해 최신 버전의 Ruby를 설치한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>ruby-full build-essential zlib1g-dev
+</code></pre></div></div>
+
+<p>jekyll에선 ruby gem의 설치 경로를 루트 계정이 아닌 사용자 계정으로 변경하도록 권고하고 있다.
+다음 command로 환경 설정 변수에 설정을 추가할 수 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export GEM_HOME="$HOME/gems"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export PATH="$HOME/gems/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>필자는 echo에 해당하는 부분은 직접 ~/.bashrc 파일을 에디터로 열어 추가하였다.</p>
+
+<p>위의 기본 환경 설정이 끝났다면 이제 Jekyll을 설치하면 된다.</p>
+
+<h2 id="jekyll-설치-및-구성">Jekyll 설치 및 구성</h2>
+
+<ol>
+  <li>Jekyll 과 Bundler 젬을 설치</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div></div>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">./blog</code>에 새 Jekyll 사이트를 생성</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new blog
+</code></pre></div></div>
+
+<ol>
+  <li>생성된 디렉토리로 이동 후 사이트 빌드 및 로컬 서버에 적용</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>blog
+bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+<ol>
+  <li>브라우저에서 <a href="http://localhost:4000" rel="nofollow" target="_blank" class="extlinks">http://localhost:4000</a>에 접속</li>
+</ol>
+
+<p>정상적으로 설치가 됐다면 여기서 jekyll 기본 화면이 보일 것이고, 나는 여기서 에러가 발생했다. 끝에 –trace를 붙여 에러 자세히 확인하라길래 붙여서 확인해보니 다음과 같이 에러가 발생했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">`require': cannot load such file -- webrick (LoadError)</code></p>
+
+<p>“webrick이 뭔데 씹덕아” 를 외치고 싶었지만 에러를 뿜으며 울고있는 terminal을 달랠 방법을 찾았다.</p>
+
+<p>다행히도 나같은 사람이 많은지 해결책을 금방 찾을 수 있었다.</p>
+
+<h3 id="에러-해결">에러 해결</h3>
+
+<p><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --trace</code> 입력 시 <code class="language-plaintext highlighter-rouge">`require': cannot load such file -- webrick (LoadError)</code>에러가 발생했을 때 에러 해결 방법</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle add webrick
+bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>이후 다시 로컬 서버에서 접속해보면 사이트가 잘 열린다!</p>
+
+<h2 id="github-pages로-호스팅하기">GitHub Pages로 호스팅하기</h2>
+
+<p>꽤나 어려울 줄 알았는데 설정할 것도 별로 없고 금방 할 수 있도록 잘 만들어놔서 호스팅 자체는 너무 편안했다.</p>
+
+<p>GitHub에서 Repo 이름을 <code class="language-plaintext highlighter-rouge">your_want_name.github.io</code> 와 같은 형식으로 Repo를 만들어준다.
+위에 jekyll로 만든 폴더에서 git 설정하고 커밋 후 github과 연결해준다.</p>
+
+<pre><code class="language-git">git init
+git remote add origin https://github.com/user-name/repo-name
+git add .
+git commit -m "commit message"
+git push -u origin main
+</code></pre>
+
+<p>Main Branch가 main이 아니라 master인 경우도 있으니 잘 확인할 것.</p>
+
+<p>repo에 사이트 push까지 잘 해주었다면 이제 github 사이트에서 설정만 해주면 된다.</p>
+
+<p>블로그 Repo에 들어가 탭 끝에 있는 Settings -&gt; 좌측 Code and automation에 있는 Pages로 들어가면 Source와 Branch를 설정할 수 있다.</p>
+
+<p>Source는 Deploy from a branch로 설정하였고, Branch는 자세한 내용은 후술하겠지만 각자 상황에 따라 알맞게 선택한다. 필자는 처음에 main으로 적용했다가 테마 적용 후 gh-pages로 변경하였다.</p>
+
+<h3 id="jekyll-테마-적용하기">Jekyll 테마 적용하기</h3>
+
+<p>jekyll 테마는 검색해보면 진짜 셀 수 없이 많다.
+유료도 있고 무료도 있고 다양하게 있지만 필자는 무료 테마 중 H20-ac가 가장 깔끔하고 맘에 들어서 이걸로 선택했다.</p>
+
+<p>테마마다 적용방법이 다른지는 모르겠는데, <strong>필자는 기존 jekyll 만들어 둔 폴더에 그대로 다운로드 받은 테마 압축 파일을 풀어 넣고 _config.yml 및 전반적인 페이지 구성 파일들을 수정해주었다.</strong></p>
+
+<p>테마마다 _config.yml에서 수정하는 내용이 다른거 같은데 보통 블로그의 이름, 닉네임, SNS 링크 등 전반적인 블로그 설정에 관련된 내용들이 많다. 다른글에서 따로 다룰 예정.</p>
+
+<p>전반적인 사이트에 대한 설정을 마치고 테마 내 css, html 파일을 내 입맛에 맞게 바꾸고 위에서 했듯이 로컬서버를 돌려보니 블로그가 내 취향에 맞게 잘 꾸며졌다!</p>
+
+<p>와 이제 글만 쓰면 되겠다 나이스~! 라고 생각하고 기대감에 부푼것도 한 순간, 분명히 로컬 서버에서는 POST 목록이 잘 보이는데 Github pages에 배포하면 보이지 않는것이었다.</p>
+
+<p>이때 로컬 서버에서 성공했다고 Github Pages에 배포했을 때까지 성공한다는 보장은 없다는걸 깨달았다.</p>
+
+<h3 id="github-pages는-특정-plugins만-지원한다">Github pages는 특정 plugins만 지원한다</h3>
+
+<p>Github pages에서는 모든 plugin을 지원하는것이 아니라 몇몇개의 plugin만 공식적으로 지원하기 때문에 github pages dependency에 들어가 있는 plugin만 지원이 된다. 절망스럽게도 내가 받은 theme는 jekyll-paginate-v2 라는 녀석이 적용되어 있었으며 github pages는 이를 지원하지 않았다. plugins이 적용되지 않으니, 블로그에 들어가보면 내가 쓴 글들의 목록이 보이지 않았다.</p>
+
+<p><strong>“그럼 이 안에 없는 plugin들은 못쓰는건가요?!”</strong>
+절규하며 해결방법을 모색해보니, github pages 자체 환경에서 build를 할 때 plugin을 적용하지 못할 뿐이지, 내 컴퓨터나 다른 서버 등 <strong>해당 plugin을 지원하는 환경에서 build하고, Github pages에서 나타내도록 해주면 된다</strong>는 것이다!</p>
+
+<p>근데 다른 사람들은 Travis 같은 것들로 자동화하는 방법만 소개하기에 일단 따라했는데 Travis 무료로 사용할랬더니 카드가 올바지지 않다고 안된단다.. 지금까지 너무나 잘 써온 마스터카드인데.. 그래서 포기하고 이유는 알았으니 해결을 하기 위해 삽질을 하기 시작했다.</p>
+
+<p>“그럼 build 결과물인 _site만 넣고 push하면 된다는건가?”
+그래서_site를 넣고 push했는데 오.. 안된다.. 지금 생각해보면 _site 넣는다고 서버에서 build를 안하는게 아니니 당연,,^^</p>
+
+<p>뭐가 문제지 싶어 처음엔 설정을 잘못 건드렸나 싶어_config.yml 설정을 계속 바꿔도 보고 paginate-v2에 관련된 옵션을 모두 지워 보기도 하고 여러가지 건드렸는데 POST 페이지는 내 심정을 아는지 모르는지 계속 내게 목록을 보여주지 않았다..</p>
+
+<p>로컬 서버에서는 잘 되는걸 보면_config.yml 설정 문제는 아닐거 같아 Github을 좀 둘러보니 action에서 이것저것 하고 있다는걸 주목하게 됐다. 처음엔 그냥 파일에 문법 에러나 깨진게 없는지 테스트 해주는건가? 싶어 안 건드리고 있었으나 내용을 살펴보니 build도 하고 deploy까지 하는것이 이 친구들이라는 것을 알게 됐다. ‘잉..? 근데 얘네는 build에 deploy까지 한다는데 build한 결과물을 도대체 어디에 놔두고 뭘 deploy까지 하고 있는거지?’ 라는 생각에 찾아보니 내부 서버에서 build하고 해당 build의 결과물을 gh-pages라는 branch에 자동으로 deploy까지 해주고 있었던 것이다.</p>
+
+<p>그래서 좀 더 찾아보니 <strong>github pages에 웹사이트가 배포되는 단계</strong>는 아래와 같다.</p>
+
+<ol>
+  <li>글 작성 후 이를 github에 push</li>
+  <li>Github server 환경에서 내가 push한 파일들을 기반으로 Build</li>
+  <li>해당 생성된 결과물이 gh-pages branch에 배포 및 이 파일을 기반으로 웹 페이지 호스팅</li>
+</ol>
+
+<p>‘그렇다면 gh-pages에 내가 build한 결과물을 직접 push하면 post 목록이 멀쩡하게 보이지 않을까?’</p>
+
+<p>두근두근하며 gh-pages에 build해놓은 파일을 push했지만 이마저도 실패.</p>
+
+<p>web쪽으로 build, deploy부터 github actions 등 CI/CD쪽으로 전혀 지식이 없다고 해도 무방할 정도로 아는게 없었기 때문에 이때쯤 멘붕이 왔다.</p>
+
+<p>그렇게 github actions을 어떻게 활용하는건지 구조가 어떻게 돌아가는지 이리저리 삽질도 해보며 대충 파악할 때쯤 근데 왜 무슨짓을 해도 gh-pages에 있는 내용이 사이트에 적용이 안되지?</p>
+
+<p>다시 한 번 절망하고 있는데.. 머리 속에 한 생각이 번뜩 스쳐갔다.</p>
+
+<p>‘어라.. 그리고보니 Github repo 설정에 pages에 무슨 branch 고르는거 있지 않았나..? 설마 그건가…??’</p>
+
+<p>여러 블로그를 전전하며 세팅을 배우는게 아니라 그저 따라했을 뿐인 나였기에 Github repo 설정에 문제가 있을 줄은 상상도 못했다.</p>
+
+<p>그렇게 설정을 확인해보니 아니나 다를까 main branch를 기반으로 github pages가 호스팅되고 있는걸 확인했다.</p>
+
+<p>이것만 바꾸면 삽질이 드디어 끝나는 걸까..?</p>
+
+<p>손을 벌벌 떨며 <strong>repo 설정에서 github pages에 호스팅 되는 branch를 gh-pages로 변경</strong>했고 POST 목록은 너무나도 잘 보여 감격의 눈물 한 방울 또르륵 흘렸다 ㅜㅜ..</p>
+
+<p>성공한 방법을 간단히 요약하자면,</p>
+
+<ol>
+  <li>repo의 github pages 설정에서 branch를 gh-pages로 설정</li>
+  <li>내 PC에서 글 작성 후 jekyll build</li>
+  <li>_site 폴더에 build된 파일을 github 블로그 repo의 gh-pages에 commit 및 push</li>
+</ol>
+
+<p>참고로 설정에 따라 branch의 이름 변경도 가능하다.</p>
+
+<p>사실 github dependency에 제공하는 plugin만 사용했더라면 이런 귀찮은 일이 없었을터인데..</p>
+
+<p>그래도 어차피 이후에 다른 plugins 쓸려면 했어야 할 일이니까 매도 먼저 맞는게 낫겠지~</p>
+
+<p>삽질하다보면 정말 사소한 곳에서 잘못되어 안되는 경우가 참 많은거 같다. 이번에도 그런 경우일 줄은.. 여튼 성공적으로 테마 적용을 마무리 할 수 있었다.</p>
+
+<h2 id="끝난줄-알았지-개발엔-끝이-없다">끝난줄 알았지? 개발엔 끝이 없다</h2>
+
+<p>하지만 개발자에게 끝이란 건 존재하지 않는다!
+톱니바퀴가 되어 영원한 굴레에서 벗어날 수 없는것이 역시 개발자 아니겠습니까. 하하.</p>
+
+<p>일단 post가 보이니 포스팅 자체는 가능해졌지만 글 쓰는건 여전히 불편하기에 여러가지 고쳐야 할 사항이 많다.</p>
+
+<p>현 시점에서 포스팅은 이렇게 하고 있다.</p>
+
+<ol>
+  <li>main branch에서 _post 폴더에 VSCode로 Markdown 글 작성</li>
+  <li>상단 헤더에 직접 글 제목, 날짜 추가</li>
+  <li>jekyll Build</li>
+  <li>main branch에서 build한 파일을 gh-pages branch에 push</li>
+</ol>
+
+<p>위 과정을 거치면 포스팅이 완성되는데.. 원시인도 아니고 직접 날짜 하나하나 쓰고 직접 build도 하고~ push도 하고 앉아있으니 자동화가 우리 삶에 얼마나 이로운 것인지 다시 한 번 깨닫는 계기가 되었다.</p>
+
+<p>그래서 Jenkins나 Travis ci를 적용해 자동화 해보고 이를 하는 방법을 다음에 써 볼 생각이다. 언제가 될지는 모르겠지만~</p>
+
+<p>추가로 지금 구상중인 것은 notion api 사용해서 notion에 글 작성해서 특정 notion database에 올리면 자동으로 깃헙 블로그에 배포되도록 하는걸 생각하고 있다.</p>
+
+<p>이전에 notion api를 이용해서 데이터베이스에 있는 글을 가져오거나 글을 쓰는 등 테스트는 깔짝거려봤기 때문에 가능은 할 듯!</p>
+
+<p>갈수록 할 일이 태산이구만~ 좀 더 열심히 해야겠다!</p>
+
+<hr>
+
+<h1 id="reference">Reference</h1>
+
+<p><a href="https://jekyllrb-ko.github.io/docs/" rel="nofollow" target="_blank" class="extlinks">https://jekyllrb-ko.github.io/docs/</a>
+<a href="https://supermemi.tistory.com/145" rel="nofollow" target="_blank" class="extlinks">https://supermemi.tistory.com/145</a>
+<a href="https://shlrur.github.io/develog/2019/01/01/jekyll-template-story-3/" rel="nofollow" target="_blank" class="extlinks">https://shlrur.github.io/develog/2019/01/01/jekyll-template-story-3/</a></p>
+
+            <!--
+            <div class="post-copyright">
+              <p><span>版权声明：</span>如无特别声明，本文版权归&nbsp;<a href="http://localhost:4000">Hwara's Playground</a>&nbsp;所有，转载请注明本文链接。</p>
+              <p>（采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 许可协议进行授权）</p>
+              <p><span>本文标题：</span>《 Ubuntu 환경 기반 Jekyll을 이용한 GitHub Blog 구축 및 theme 적용 》</p>
+              <p><span>本文链接：</span><a href="http://localhost:4000/tech/make_jekyll_blog.html">http://localhost:4000/tech/make_jekyll_blog.html</a></p>
+            </div>
+            -->
+          </article>
+        </div>   
+        <div class="table-of-contents">
+          <h2>Contents</h2>
+          <ul><li><a href="#사전-환경-구성">사전 환경 구성</a></li><li><a href="#jekyll-설치-및-구성">Jekyll 설치 및 구성</a><ul><li><a href="#에러-해결">에러 해결</a></li></ul></li><li><a href="#github-pages로-호스팅하기">GitHub Pages로 호스팅하기</a><ul><li><a href="#jekyll-테마-적용하기">Jekyll 테마 적용하기</a></li><li><a href="#github-pages는-특정-plugins만-지원한다">Github pages는 특정 plugins만 지원한다</a></li></ul></li><li><a href="#끝난줄-알았지-개발엔-끝이-없다">끝난줄 알았지? 개발엔 끝이 없다</a></li></ul>
+        </div>
+      </div>
+      
+
+      
+    </div>
+
+    <section class="author-detail">
+      <section class="post-footer-item author-card">
+        <div class="avatar">
+          <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">Hwara</div>
+        <div class="bio">
+          <p>Electronic & Embedded Software Engineer</p>
+        </div>
+        
+        <ul class="sns-links">
+          
+          <li>
+            <a href="https://github.com/hwara" target="_blank" aria-label="github">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://twitter.com/HwaraDev" target="_blank" aria-label="twitter">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          
+        </ul>
+        
+      </section>
+      <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+          <a href="/tech/as5311.html" class="read-next-link" aria-label="AS5311를 이용한 Magnet Absolute position 측정 테스트"></a>
+          <section>
+            <span>AS5311를 이용한 Magnet Absolute position 측정 테스트</span>
+            <p>분해능 1um의 Linear Encoder를 개발하려면 어떻게 해야하나 머리를 싸매다가 찾게 된 IC인...</p>
+          </section>
+          
+      </div>
+        
+
+        
+        <div class="read-next-item">
+          <a href="/daily/first-posting.html" class="read-next-link" aria-label="와 새 블로그! 첫 글!"></a>
+            <section>
+              <span>와 새 블로그! 첫 글!</span>
+              <p>첫 글이라니 너무 설렌다리~</p>
+            </section>
+            
+        </div>
+        
+      </section>
+      
+      <section class="post-footer-item comment">
+        <div class="comments-headline">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+          </svg>
+          <span>댓글</span>
+        </div>
+        
+      </section>      
+      
+   
+      
+      <section class="post-footer-item comment">
+          <div id="disqus_thread"></div>
+      </section>
+      
+
+      
+    </section>
+
+    <footer class="g-footer">
+  <section>Hwara's Playground ©
+    
+    
+    2022
+
+  </section>
+  <section>Powered by <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> & <a
+      href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> v1.1.13  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O"
+      target="_blank" class="extlinks">H2O</a>)
+  </section>
+  
+  <section>
+    
+    
+    
+    
+  </section>
+</footer>
+<button id="list" aria-label="Scroll back to top" class="mobile-list" type="button">
+  <svg class="icon list day" aria-hidden="true">
+    <use xlink:href="#icon-list-day"></use>
+  </svg>
+  <svg class="icon list night" aria-hidden="true">
+    <use xlink:href="#icon-list-night"></use>
+  </svg>
+  <svg class="icon exit day" aria-hidden="true">
+    <use xlink:href="#icon-exit-day"></use>
+  </svg>
+  <svg class="icon exit night" aria-hidden="true">
+    <use xlink:href="#icon-exit-night"></use>
+  </svg>
+</button>
+<button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
+  <svg class="icon up day" aria-hidden="true">
+    <use xlink:href="#icon-up-day"></use>
+  </svg>
+  <svg class="icon up night" aria-hidden="true">
+    <use xlink:href="#icon-up-night"></use>
+  </svg>
+</button>
+    
+    <div class="modal">
+        <div class="modal-content">
+          <header>
+            <span class="close">&times;</span>
+          </header>
+          <div class="container"></div>
+        </div>
+    </div>
+    
+  </div>
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+    $("a.social-share-icon").each(function() {
+      $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+  </script>
+
+  
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hwara1221.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
+  <script>
+      // 给图片添加链接
+      $(document).ready(function() {
+          var baseurl = $("meta[property='og:baseurl']").attr('content');
+          $("p img").each(function() {
+              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+              $(this).wrapAll(strA);
+              var caption = $(this)[0].alt;
+              $(this).parent().after('<span class="caption">' + caption + '</span>');
+          });
+
+          Fancybox.bind('[data-fancybox]', {
+            on: {
+              load: (fancybox, slide) => {
+                var gray = $("meta[property='og:gray']").attr('content');
+                if(gray == "true"){
+                    $(".fancybox__content img").addClass("gray");
+                    $(".carousel__track .fancybox__thumb").addClass("gray");
+                }
+              }
+            }
+          });   
+          
+          
+
+          if($("#comments-switch").length > 0){
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if(comment_status){
+              $("#waline").addClass("active");
+            }else {
+              $("#disqus_thread").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function(){
+              $("#disqus_thread").toggleClass("active");
+              $("#waline").toggleClass("active");
+            })
+          }else {
+            if($("#disqus_thread").length > 0) {
+              $("#disqus_thread").addClass("active");
+            }else if($("#waline").length > 0) {
+              $("#waline").addClass("active");
+            }
+          }
+
+          var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+          function dateFormat(date, format){
+            var date_org = dayjs(date, time_formats[format]);
+            var date     = date_org.format(time_formats[format]);
+            return {"date_org": date_org, "date": date}
+          }
+
+          dayjs.extend(window.dayjs_plugin_customParseFormat);
+          dayjs.extend(window.dayjs_plugin_relativeTime);
+          var post_date = $("meta[property='post-date']").attr('content');
+          var post_date_format = $("meta[property='post-date-format']").attr('content');
+          var local_post_date = dateFormat(post_date, post_date_format);
+
+          $(".post time span.create-at").html(local_post_date["date"]);
+
+          fetch("https://api.github.com/repos/Hwara/hwara.github.io/commits?path=tech/_posts/2022-11-30-make_jekyll_blog.md")
+          .then((response) => {
+            return response.json();
+          })
+          .then((commits) => {
+            if(commits.length != 0){
+              var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            }else {
+              var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            if(relative_time > 365){
+              $(".post-copyright").append("<p class='tips'>本文最后一次更新为 <span>" + relative_time + "</span> 天前，文章中的某些内容可能已过时！</p>");
+            }
+          });   
+          
+          /*
+          * Keyboard shortcut bind: left and right
+          */
+
+          var previous_url = $("meta[property='og:previous_url']").attr('content');
+          var next_url = $("meta[property='og:next_url']").attr('content');
+
+          hotkeys('left', function(event, handler){
+              // Prevent the default refresh event under WINDOWS system
+              event.preventDefault();
+              if(previous_url){
+                  console.log('you pressed left!');
+                  window.location.href = previous_url;
+              }else {
+                  $("#no-previous").addClass("active");
+                  console.log('已经是最新一篇文章了！');
+                  console.log('Already the latest article！');
+                  setTimeout(function(){$("#no-previous").removeClass("active");}, 1500);
+              }
+          });
+
+          hotkeys('right', function(event, handler){
+              // Prevent the default refresh event under WINDOWS system
+              event.preventDefault();
+              if(next_url){
+                  console.log('you pressed right!');
+                  window.location.href = next_url;
+              }else {
+                  $("#no-next").addClass("active");
+                  console.log('已经是最后一篇文章了！');
+                  console.log('Already the last article！');
+                  setTimeout(function(){$("#no-next").removeClass("active");}, 1500);
+              }
+          });
+      });
+  </script>
+  <script src="https://at.alicdn.com/t/font_3046306_skfh9jzzbbf.js"></script>
+  
+  
+  
+  <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            mermaid.initialize({
+                startOnLoad:true,
+                theme: "default",
+            });
+            mermaid.init(undefined, $('.mermaid2'));
+        });
+    </script>
+ 
+   
+</body>
+
+</html>

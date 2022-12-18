@@ -20,6 +20,9 @@
     {% if site.google_search %}
     <meta name="google-site-verification" content="{{ site.google_search }}" />
     {% endif %}
+    {% if site.naver_search %}
+    <meta name="naver-site-verification" content="{{ site.naver_search }}" />
+    {% endif %}
     <meta name="theme-color" content="{{ site.pwa.color }}" />
     <link rel="manifest" href="{{ " /manifest.json" | prepend: site.baseurl }}" />
     <link rel="apple-touch-icon" href="{{ " /assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
